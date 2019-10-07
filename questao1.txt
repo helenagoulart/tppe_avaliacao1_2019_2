@@ -1,0 +1,13 @@
+a) A interface pública pode ser acessada e modificada por qualquer código. Uma interface publicada se trata do uso de uma interface em
+um determinado código difícil de ser encontrado e modificado, por isso não devem ser refatoradas - devido ao seu difícil acesso.
+
+b) A "Cirurgia com rifle" se trata de uma refatoração na qual a mudança em uma classe exige a mudança nas demais classe.
+Em contrapartida, as "Mudanças divergentes" possuem uma única classe que passa por diversas alterações.
+
+c) Falsa. O uso da refatoração é utilizado para facilitar a leitura e compreensão do código. O foco não é, no entanto,
+o desempenho do código, e sim o modo como as variáveis, classes e métodos estão organizados. A melhoria de desempenho pode acontecer
+como consequência, e não como objetivo principal.
+
+d) A refatoração pode ser dada como concluída quando o projetista pondera quais operações devem ser aplicadas, e após a aplicação,
+os testes do código continuam passando e as funcionalidades se mantém. Para que a informação de conclusão da refatoração
+seja obtida de maneira mais concreta, é importante pré-determinar métricas para refatoração que poderão ser acompanhadas. 
