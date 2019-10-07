@@ -63,29 +63,13 @@ public class CadastroAlunos {
 	}
 
 	public Aluno[] ordenarAlunos() {
-		Aluno resposta[] = new Aluno[alunos.length];
-		//copia o vetor para o vetor de resposta
-		for (int i=0; i < alunos.length; i++) {
-			resposta[i] = alunos[i]; 
-		}
-		
-		for (int i = 0; i < resposta.length - 1; i++) {
-			for (int j = i; j < resposta.length; j++) {
-				String matricula1 = criarMatricula(resposta, i);
-				String matricula2 = criarMatricula(resposta, j);
-				if (matricula1.compareTo(matricula2) > 0) {
-					Aluno t = resposta[i]; 
-					resposta[i] = resposta[j];
-					resposta[j] = t;
-				}
-			}
-		}
-		
-		return resposta;
+		OrdenaAluno aluno = new OrdenaAluno(this);
+		return aluno.computar();
 	}
 
-	private String criarMatricula(Aluno[] resposta, int i) {
-		return resposta[i].getPrefixoMatricula() + "/" + resposta[i].getSufixoMatricula();
+	String criarMatricula(Aluno[] resposta, int i) {
+		String matricula1 = resposta[i].getPrefixoMatricula() + "/" + resposta[i].getSufixoMatricula();
+		return matricula1;
 	}
 
 }
