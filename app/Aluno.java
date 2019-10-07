@@ -13,12 +13,7 @@ public class Aluno {
 	public Aluno(String nome, String prefixoMatricula, String sufixoMatricula, String email, String celular) throws DadosAlunoIncompletoException {
 		if (nome == null || prefixoMatricula == null || sufixoMatricula == null ||
 			nome.equals("") || prefixoMatricula.equals("") || sufixoMatricula.equals("")) {
-			StringBuilder builder = new StringBuilder(); 
-			builder.append("Dados informados para Aluno estão incompletos:");
-			builder.append(nome == null ? "Nome: " + nome : null);
-			builder.append(prefixoMatricula == null ? "Prefixo Matricula: " + prefixoMatricula : null);
-			builder.append(sufixoMatricula== null ? "Sufixo Matricula: " + sufixoMatricula : null);
-			throw new DadosAlunoIncompletoException(builder.toString());
+			trhowAlunosMessage(nome, prefixoMatricula, sufixoMatricula);
 		}
 		
 		this.nome = nome;
@@ -26,6 +21,16 @@ public class Aluno {
 		this.sufixoMatricula = sufixoMatricula; 
 		this.email = email; 
 		this.celular = celular; 
+	}
+
+	private void trhowAlunosMessage(String nome, String prefixoMatricula, String sufixoMatricula)
+			throws DadosAlunoIncompletoException {
+		StringBuilder builder = new StringBuilder(); 
+		builder.append("Dados informados para Aluno estão incompletos:");
+		builder.append(nome == null ? "Nome: " + nome : null);
+		builder.append(prefixoMatricula == null ? "Prefixo Matricula: " + prefixoMatricula : null);
+		builder.append(sufixoMatricula== null ? "Sufixo Matricula: " + sufixoMatricula : null);
+		throw new DadosAlunoIncompletoException(builder.toString());
 	}
 
 	public static Aluno obterAluno(String nome, String prefixoMatricula, String sufixoMatricula, String email,
